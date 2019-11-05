@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { numbers } from "../../../data"
 import NumberButton from "./NumberButton"
 
@@ -14,13 +14,17 @@ const Numbers = () => {
 
 	const [numberState, setNumberState] = useState(numbers);
 
+	console.log(numberState);
+	
 	return (
 		<div>
-	   		{
+			{
 				numberState.map((number, index) => {
-					<NumberButton />
+					return <NumberButton key={index} number={number} />
 				})
 			}
 		</div>
 	);
 };
+
+export default Numbers;

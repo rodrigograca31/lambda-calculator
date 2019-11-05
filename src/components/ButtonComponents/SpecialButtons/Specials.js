@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { specials } from "../../../data"
 import SpecialButton from "./SpecialButton"
 
@@ -14,9 +14,11 @@ const Specials = () => {
 		<div>
 			{
 				specialState.map((special, index) => {
-					<SpecialButton />
+					return <SpecialButton key={index} special={special} />
 				})
 			}
 		</div>
 	);
 };
+
+export default Specials
