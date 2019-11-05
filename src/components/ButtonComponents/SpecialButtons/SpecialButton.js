@@ -1,8 +1,9 @@
 import React from "react";
+import "./SpecialButton.scss"
 
 const SpecialButton = (props) => {
 	return (
-		<button>{props.special}</button>
+		<button onClick={() => props.clearEverything()}>{props.special}</button>
 	);
 };
 

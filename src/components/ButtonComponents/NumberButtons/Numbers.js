@@ -9,18 +9,16 @@ import { numbers } from '../../../data'
 */
 //Import your array data to from the provided data file
 
-const Numbers = () => {
+const Numbers = (props) => {
 	// STEP 2 - add the imported data to state
 
 	const [numberState, setNumberState] = useState(numbers);
 
-	console.log(numberState);
-	
 	return (
-		<div>
+		<div id="numbers">
 			{
 				numberState.map((number, index) => {
-					return <NumberButton key={index} number={number} />
+					return <NumberButton key={index} number={number} setNum1={props.setNum1} setNum2={props.setNum2} nums={{ num1: props.nums.num1, num2: props.nums.num2 }} setCurrDisplay={props.setCurrDisplay} operation={props.operation}/>
 				})
 			}
 		</div>
